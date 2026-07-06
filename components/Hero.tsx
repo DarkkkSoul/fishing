@@ -3,6 +3,7 @@ import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ArrowRight, MoveRight, Star } from "lucide-react"
 import { useRef } from "react"
+import Header from "./utils/Header"
 
 gsap.registerPlugin(useGSAP)
 
@@ -42,7 +43,7 @@ function Hero() {
 
     return (
         <div className={`bg-[url('/hero.png')] w-full flex items-center h-screen bg-no-repeat overflow-hidden bg-cover bg-center relative`}>
-
+            <Header />
             <div className="absolute bg-white/33 z-10 inset-0" />
             <div className="absolute h-56 blur-3xl bg-white/80 z-10 -bottom-5 left-0 right-0" />
             <div className="absolute h-15 blur-xl bg-white z-10 -bottom-5 left-0 right-0" />
@@ -52,13 +53,13 @@ function Hero() {
                 ref={heroTextRef}
                 className="ml-30 max-w-3xl flex flex-col z-15">
 
-                <div 
-                onMouseEnter={hover}
-                onMouseLeave={leave}
-                className="mb-3 flex space-x-3 items-center rounded-full bg-white px-5 cursor-pointer *:cursor-pointer py-2 w-fit">
+                <div
+                    onMouseEnter={hover}
+                    onMouseLeave={leave}
+                    className="mb-3 flex space-x-3 items-center rounded-full bg-white px-5 cursor-pointer *:cursor-pointer py-2 w-fit">
                     <div className="flex border-r pr-3 border-r-olive-950/60 space-x-2 items-center">
                         <div className="text-sm font-diphylleia pb-0.5">4.6</div>
-                        <Star size={19} stroke="none" fill="#F0B100"/>
+                        <Star size={19} stroke="none" fill="#F0B100" />
                     </div>
                     <button className="text-olive-900 flex items-center space-x-2.5 justify-center w-fit font-diphylleia">
                         <p className="text-sm pb-0.5">3+ new gears</p>

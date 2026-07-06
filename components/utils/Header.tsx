@@ -1,6 +1,6 @@
 export default function Header() {
     return (
-        <div className="bg-white/70 border-b border-b-olive-600/90 backdrop-opacity-50 backdrop-blur-xs fixed top-0 left-0 right-0 z-50 h-15 flex items-center justify-around text-olive-900 font-diphylleia">
+        <div className="bg-white/70 border-b border-b-olive-600/90 backdrop-opacity-50 backdrop-blur-xs absolute  top-0 left-0 right-0 z-50 h-15 flex items-center justify-around text-olive-900 font-diphylleia">
             <div className="text-2xl">WildCast Co.</div>
             <div>
                 <ul className="text-sm flex space-x-5">
