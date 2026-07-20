@@ -21,9 +21,10 @@ function Products() {
             duration: 0.2
         })
     })
+
     return (
-        <div className="w-full min-h-screen py-20">
-            <div className="max-w-7xl mx-auto space-y-10">
+        <div className="w-full min-h-screen">
+            <div className="max-w-7xl mx-auto space-y-16">
 
                 <div className="flex flex-col">
                     <h2 className="text-6xl font-tangerine text-olive-900">Featured Products</h2>
@@ -48,8 +49,8 @@ function Products() {
 
                 </div>
 
-                <div onMouseEnter={hover} onMouseLeave={leave} className="flex justify-center mt-12">
-                    <button className="flex border hover:bg-olive-700 hover:text-white  border-olive-700 text-olive-700 items-center gap-2 px-4 py-2 rounded-lg text-sm cursor-pointer font-diphylleia">
+                <div className="flex justify-center mt-12">
+                    <button onMouseEnter={hover} onMouseLeave={leave} className="flex border hover:bg-olive-700 hover:text-white  border-olive-700 text-olive-700 items-center gap-2 px-4 py-2 rounded-lg text-sm cursor-pointer font-diphylleia">
                         <label className="pb-0.5 cursor-pointer">View All Products</label>
                         <div ref={arrowRef}>
                             <MoveRight />
