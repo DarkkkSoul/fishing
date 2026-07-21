@@ -105,23 +105,52 @@ const testimonials: Testimonial[] = [
 
 function Testimonials() {
     return (
-        <div className='max-w-7xl mx-auto'>
+        <div className='max-w-7xl mx-auto space-y-16 py-20'>
+
+            <div className="flex flex-col">
+                <h2 className="text-6xl font-tangerine text-olive-900">What our <span className="text-gray-400">customers</span> say</h2>
+                <div className=" flex items-center space-x-2">
+                    <div className="flex gap-2 *:size-2 *:bg-olive-600/90 *:rounded-full">
+                        <div className="" />
+                        <div className="" />
+                    </div>
+                    <div className="w-60 h-0.5 bg-olive-600/80"></div>
+                </div>
+            </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-16 justify-center">
 
                 {testimonials.map((testimonial) => (
 
-                    <div key={testimonial.id} className='max-w-88 h-90 justify-between items-center flex flex-col relative bg-[#F3F3F3] p-7 rounded-lg group shadow-md/18'>
+                    <div key={testimonial.id} className='max-w-84 h-90 justify-between items-center flex flex-col relative bg-[#F3F3F3] p-7 rounded-lg group shadow-md/18'>
+
 
                         {/* <div className='hidden group-hover:block absolute bottom-0 right-0 left-0 bg-white h-35 rounded-b-lg'>
                             <div className='size-30 bg-olive-600 rounded-full backdrop-blur-2xl'/>
                         </div> */}
 
+                        <svg className='absolute bottom-0 left-0 right-0 mask-t-from-1 mask-radial-from-1% mask-radial-at-bottom' width={336} height={170} viewBox='0 0 336 170'>
+
+                            <defs>
+                                <pattern id='circle' patternUnits="userSpaceOnUse" width={20} height={20}>
+                                    <rect width={"100%"} height={"100%"} stroke="none" fill='none'/>
+                                    <circle r={3} cx={10} cy={10} fill="gray"/>
+                                    <circle r={3} cx={0} cy={0} fill="gray"/>
+                                    <circle r={3} cx={20} cy={0} fill="gray"/>
+                                    <circle r={3} cx={20} cy={20} fill="gray"/>
+                                    <circle r={3} cx={0} cy={20} fill="gray"/>
+                                </pattern>
+                            </defs>
+
+                            <rect x={0} y={0} width={336} height={170} fill='url(#circle)' />
+                        </svg>
+
+
                         <div className="flex flex-col space-y-3 z-4">
-                            <p className="text-lg font-diphylleia tracking-tight">{testimonial.testimonial}</p>
+                            <p className="text-lg text-olive-900 font-diphylleia tracking-tight">{testimonial.testimonial}</p>
                             <div className="flex flex-col ">
-                                <h3 className="text-lg font-sans font-medium">{testimonial.name}</h3>
-                                <p className="text-sm font-diphylleia">{testimonial.location}</p>
+                                <h3 className="text-lg font-sans font-medium text-olive-900">{testimonial.name}</h3>
+                                <p className="text-sm font-diphylleia text-olive-900">{testimonial.location}</p>
                             </div>
                         </div>
 

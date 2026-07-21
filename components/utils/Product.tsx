@@ -20,7 +20,7 @@ function Product({ name, price, image, description }: ProductProps) {
                 <h3 className="text-2xl">{name}</h3>
                 <p className="text-[16px]/[23px] text-white/80">{description}</p>
 
-                <div className="flex gap-2 items-center justify-between mt-3">
+                <div className="flex gap-2 mt-5 items-center justify-between">
                     <div className="font-diphylleia bottom-5 right-5 text-2xl">
                         ${" " + price}
                     </div>

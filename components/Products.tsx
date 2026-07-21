@@ -23,7 +23,7 @@ function Products() {
     })
 
     return (
-        <div className="w-full min-h-screen">
+        <div className="w-full h-full">
             <div className="max-w-7xl mx-auto space-y-16">
 
                 <div className="flex flex-col">
