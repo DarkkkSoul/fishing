@@ -10,7 +10,7 @@ const phoneImages = [
 
 function CTA() {
     return (
-        <div className='min-h-screen w-full'>
+        <div className='h-full w-full'>
             <div className='flex justify-between relative shadow-[0_0_10px_2px_rgba(0,0,0,0.2)] min-h-[50vh] max-w-6xl mx-auto overflow-hidden rounded-xl'>
 
                 <div className="absolute inset-0 bg-olive-700 [clip-path:polygon(0_0,58%_0,42%_100%,0_100%)]" />

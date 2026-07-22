@@ -4,6 +4,7 @@ import Hero from "@/components/Hero";
 import Products from "@/components/Products";
 import Sponsors from "@/components/Sponsors";
 import Testimonials from "@/components/Testimonials";
+import Footer from "@/components/utils/Footer";
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <About />
       <Products />
       <Testimonials />
-      <CTA/>
+      <CTA />
+      <Footer />
     </div>
   );
 }
