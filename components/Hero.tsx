@@ -74,8 +74,11 @@ function Hero() {
                 <p className="text-olive-950 max-w-xl mb-8 text-balance text-xl/relaxed tracking-tight font-diphylleia">Every <span className="decoration-dotted underline decoration-3 underline-offset-4  decoration-white">angler</span> deserves access to the best equipment without stretching their budget. Our carefully selected range of fishing gear has everything you need to make every trip a success.</p>
 
                 <div className="flex gap-x-4 z-100 mb-8">
-                    <button className="uppercase cursor-pointer bg-white/90 text-olive-950 text-sm font-diphylleia px-5 py-2.5 rounded-lg hover:border hover:border-white hover:bg-transparent hover:text-olive-950">Shop Now </button>
-                    <button className="uppercase cursor-pointer text-olive-950 border border-olive-950 text-sm font-diphylleia px-5 py-2.5 rounded-lg hover:border hover:border-white hover:bg-transparent hover:text-white"> Browse Products {">"}</button>
+                    <button className="uppercase cursor-pointer bg-white/90 text-olive-950 text-sm font-diphylleia px-5 py-2.5 rounded-lg hover:ring hover:ring-white hover:bg-transparent hover:text-olive-950 transition-all">Shop Now </button>
+                    <button className="uppercase cursor-pointer text-white/90 bg-olive-800 text-sm font-diphylleia pl-5 pr-4 py-2.5 rounded-lg  shadow-[inset_0_0_9px_0_rgba(245,245,245,0.3)] flex space-x-1.5 items-center " > 
+                    <span className="cut-text">Browse Products </span>
+                    <ArrowRight size={18} color="#DBDADA"/>
+                    </button>
                 </div>
             </div>
             <div

@@ -10,10 +10,10 @@ interface ProductProps {
 
 function Product({ name, price, image, description }: ProductProps) {
     return (
-        <div className="flex pb-3 space-y-2 flex-col justify-center rounded-xl max-w-80 bg-olive-700/90 text-white">
+        <div className="group flex pb-4 space-y-2 flex-col justify-center rounded-xl max-w-80 bg-olive-700/90 text-white">
             <div className="p-2 relative">
                 <div className="border-2 bg-black/40 relative border-white/60 h-45 w-full rounded-lg overflow-hidden">
-                    <img src={image} className="object-fit mask-b-from-20% w-full h-full" />
+                    <img src={image} className="object-fit mask-b-from-20% w-full h-full group-hover:scale-105 transition-transform duration-300" />
                 </div>
             </div>
             <div className="font-diphylleia space-y-2 px-4">
@@ -24,8 +24,8 @@ function Product({ name, price, image, description }: ProductProps) {
                     <div className="font-diphylleia bottom-5 right-5 text-2xl">
                         ${" " + price}
                     </div>
-                    <button className="flex bg-white text-olive-900 items-center gap-2 px-4 py-2 rounded-full text-sm cursor-pointer">
-                        <label className="pb-0.5">Add to Cart</label>
+                    <button className="flex bg-white text-olive-900 hover:ring hover:ring-white hover:bg-transparent hover:text-white items-center gap-2 px-4 py-2 rounded-full text-sm cursor-pointer transition-all">
+                        <label className="pb-0.5 cursor-pointer">Add to Cart</label>
                         <div className="bg-olive-700 p-1.5 rounded-full">
                             <ArrowUpRight color="white" size={15} strokeWidth={2.5} />
                         </div>

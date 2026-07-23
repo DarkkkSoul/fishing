@@ -17,7 +17,8 @@ function CTA() {
 
                 <div className="z-40 font-diphylleia flex flex-col gap-7 justify-center ml-15">
                     <h1 className='text-white text-4xl max-w-md tracking-tighter'>Register for a free 3-day trial session and get a tackle kit for free.</h1>
-                    <button className="cursor-pointer text-white/90 bg-olive-950 font-diphylleia px-6 py-1.5 pb-2 rounded-lg hover:border hover:border-olive-950 hover:text-olive-950 hover:bg-transparent w-fit">Register now</button>
+                    <button className="cursor-pointer bg-white/90 cut-text text-olive-900 font-diphylleia px-6 py-4 rounded-lg
+                    shadow-[inset_0_0_9px_0_rgba(245,245,245,0.3)] hover:bg-gray-300/90 transition-colors font-diphylleia w-fit">Register now</button>
                 </div>
 
 
