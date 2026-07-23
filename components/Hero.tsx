@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { ArrowRight, MoveRight, Star } from "lucide-react"
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Header from "./utils/Header"
 
 gsap.registerPlugin(useGSAP)
@@ -11,7 +11,15 @@ function Hero() {
     const heroTextRef = useRef<HTMLDivElement>(null)
     const taglineRef = useRef<HTMLDivElement>(null)
     const arrowRef = useRef<HTMLDivElement>(null)
+    const arrowRef2 = useRef<SVGSVGElement>(null)
+    const browseSvgRef = useRef<SVGSVGElement>(null)
     const { contextSafe } = useGSAP();
+
+    useEffect(() => {
+        if (browseSvgRef.current) {
+            gsap.set(browseSvgRef.current, { x: '-100%' })
+        }
+    }, [])
 
     useGSAP(() => {
         gsap.to(heroTextRef.current, {
@@ -40,6 +48,34 @@ function Hero() {
             duration: 0.2
         })
     })
+
+    const handleBrowseMouseEnter = () => {
+        gsap.to(arrowRef2.current, {
+            x: 5,
+            duration: 0.2
+        })
+        if (browseSvgRef.current) {
+            gsap.to(browseSvgRef.current, {
+                x: '100%',
+                duration: 1.2,
+                ease: 'power2.out'
+            })
+        }
+    }
+
+    const handleBrowseMouseLeave = () => {
+        gsap.to(arrowRef2.current, {
+            x: 0,
+            duration: 0.2
+        })
+        if (browseSvgRef.current) {
+            gsap.to(browseSvgRef.current, {
+                x: '-100%',
+                duration: 1.2,
+                ease: 'power2.out'
+            })
+        }
+    }
 
     return (
         <div className={`bg-[url('/hero.png')] w-full flex items-center h-screen bg-no-repeat overflow-hidden bg-cover bg-center relative`}>
@@ -75,9 +111,16 @@ function Hero() {
 
                 <div className="flex gap-x-4 z-100 mb-8">
                     <button className="uppercase cursor-pointer bg-white/90 text-olive-950 text-sm font-diphylleia px-5 py-2.5 rounded-lg hover:ring hover:ring-white hover:bg-transparent hover:text-olive-950 transition-all">Shop Now </button>
-                    <button className="uppercase cursor-pointer text-white/90 bg-olive-800 text-sm font-diphylleia pl-5 pr-4 py-2.5 rounded-lg  shadow-[inset_0_0_9px_0_rgba(245,245,245,0.3)] flex space-x-1.5 items-center " > 
-                    <span className="cut-text">Browse Products </span>
-                    <ArrowRight size={18} color="#DBDADA"/>
+                    <button
+                        className="uppercase cursor-pointer relative text-white/90 bg-olive-800 text-sm font-diphylleia pl-5 pr-4 py-2.5 rounded-lg shadow-[inset_0_0_9px_0_rgba(245,245,245,0.3)] flex space-x-1.5 items-center overflow-hidden hover:bg-olive-700 transition-colors"
+                        onMouseEnter={handleBrowseMouseEnter}
+                        onMouseLeave={handleBrowseMouseLeave}
+                    >
+                        <svg ref={browseSvgRef} className="absolute top-0 left-0.5 bottom-0 -skew-x-12 blur-md" >
+                            <rect x={0} y={0} width={10} height={38} fill="#ffffffcc" />
+                        </svg>
+                        <span className="cut-text">Browse Products </span>
+                        <ArrowRight ref={arrowRef2} size={18} color="#DBDADA" />
                     </button>
                 </div>
             </div>
